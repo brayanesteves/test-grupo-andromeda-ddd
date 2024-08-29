@@ -1,0 +1,16 @@
+<div>
+    <h2>Dashboard</h2>
+    <canvas baseChart
+      [datasets]="data.datasets"
+      [labels]="data.labels"
+      [options]="{ responsive: true }"
+      [chartType]="'bar'">
+    </canvas>
+    <form (ngSubmit)="onSubmit()">
+      <input [(ngModel)]="name" placeholder="Nombre" required />
+      <input [(ngModel)]="surname" placeholder="Apellido" required />
+      <input [(ngModel)]="phone" placeholder="Teléfono" required />
+      <button type="submit">Submit</button>
+    </form>
+    <div *ngIf="submittedMessage">{{ submittedMessage }}</div>
+  </div>
